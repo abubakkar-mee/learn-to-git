@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<body id="body">
     <h1>heading one</h1>
     <h2>heading two</h2>
     <button>click here</button>
@@ -18,11 +18,22 @@
     <h3>hello from local</h3>
     <h4>hello from local also</h4>
     <p>hello from local but from test branch</p>
-    <p>hello from remote but from test branch</p>
-
-    <button>update</button>
+    <p id="para">hello from remote but from test branch</p>
+    
+    <button onclick="change()">update</button>
     <button>click</button>
 
     <span>from html brand on github repository</span>
+    <script>
+        const colors = ["red","green","blue","yellow","pink","orange","gray","AliceBlue","Aqua"]
+        const change = () =>{
+            const body = document.getElementById('body')
+            const elem = document.getElementById('para')
+            elem.innerText = 'this was changed by document owner'
+            const num = Math.floor(Math.random() * (colors.length -1));
+            body.style.backgroundColor = colors[num]
+            
+        }
+    </script>
 </body>
 </html>
